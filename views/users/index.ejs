@@ -25,9 +25,9 @@
                                     <td><%= student.cell %> </td>
                                     <td><img src="/images/userPhoto/<%= student.photo %> " alt=""></td>
                                     <td>
-                                        <a class="btn btn-sm btn-info" href="#"><i class="fas fa-eye"></i></a>
-                                        <a class="btn btn-sm btn-warning" href="#"><i class="fas fa-edit"></i></a>
-                                        <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash"></i></a>
+                                        <a class="btn btn-sm btn-info" href="user/single/<%= student.id %>"><i class="fas fa-eye"></i></a>
+                                        <a class="btn btn-sm btn-warning" href="user/edit/<%= student.id %>"><i class="fas fa-edit"></i></a>
+                                        <a class="btn btn-sm btn-danger delete_btn" href="user/delete/<%= student.id %> "><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <% }) %>
@@ -60,7 +60,7 @@
                             <img id="preview_img" src="" alt="">
                             <label for="user_photo_upload"><img src="https://t4.ftcdn.net/jpg/02/17/88/73/360_F_217887350_mDfLv2ootQNeffWXT57VQr8OX7IvZKvB.jpg" alt=""></label>
                             <br>
-                            <input id="user_photo_upload" name="user_photo_upload" type="file" multiple class="form-control">
+                            <input id="user_photo_upload" name="user_photo_upload" multiple type="file" class="form-control">
                         </div>
                         <div class="my-3">
                             <label for="">Upload Your CV</label>

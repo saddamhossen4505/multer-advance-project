@@ -1,27 +1,13 @@
-
-const dotenv = require('dotenv').config();
-const twilio = require('twilio')(process.env.SID, process.env.AUTH_TOKEN);
-
-const twilio_cell = process.env.TWILIO_CELL;
+const axios = require('axios');
 
 
-// Create SMS.
-const sendSms = ( to, sms ) => {
+// Send SMS.
+const sendSMS = async ( to, message ) => {
 
-   twilio.messages.create({
-    from : twilio_cell,
-    to : to,
-    body : sms,
-   })
-   .then(res => {
-    console.log(`sms send`);
-   })
-   .catch(error => {
-    console.log(error.messages);
-   })
+   await axios.get(` https://bulksmsbd.net/api/smsapi?api_key=faqyUPpVutO26Tq0iGVK&type=text&number=${ to }&senderid=03590900025&message=${ message }`);
 
 };
 
 
-// Exports Twilio.
-module.exports = sendSms;
+// Exports axios.
+module.exports = sendSMS;

@@ -55,8 +55,23 @@
 
             };
         };
-        
 
+
+        // Delete Data Alert.
+        const delete_btn = document.querySelectorAll('.delete_btn');
+        
+        if(delete_btn){
+                delete_btn.forEach( item => {
+                item.onclick = (e) => {
+                    const confirmationAlert = confirm(' Are you Sure ? ');
+                    if(confirmationAlert){
+                        return true;
+                    }else{
+                        return false;
+                    };
+                };
+            });
+        };
 
     </script>
 </body>

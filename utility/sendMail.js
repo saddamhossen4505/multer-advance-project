@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 
 
-const sendMail = (name, to, sub) => {
+const sendMail = async (name, to, sub) => {
 
       // Create MailTransport.
       const transport = nodemailer.createTransport({
@@ -17,7 +17,7 @@ const sendMail = (name, to, sub) => {
 
 
 
-    transport.sendMail({
+    await transport.sendMail({
         from : 'seoexpartsaddamhossen@gmail.com',
         to : to,
         subject : sub,

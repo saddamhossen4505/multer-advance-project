@@ -1,7 +1,7 @@
 const express = require('express');
 const multer = require('multer');
 const path = require('path');
-const { showHomePage, userDataCreate } = require('../controllers/userController');
+const { showHomePage, userDataCreate, showSingleView, showEditForm, updateUserData, deleteUserData } = require('../controllers/userController');
 
 
 
@@ -37,7 +37,7 @@ const UserPhotoMulter = multer({
 }).fields([
     {
         name : "user_photo_upload",
-        maxCount : 1
+        maxCount : 3
     },
     {
         name : "cv",
@@ -55,6 +55,10 @@ const router = express.Router();
 // Routes.
 router.get('/', showHomePage);
 router.post('/', UserPhotoMulter, userDataCreate);
+router.get('/single/:id', showSingleView);
+router.get('/edit/:id', showEditForm);
+router.post('/update/:id', UserPhotoMulter, updateUserData);
+router.get('/delete/:id', deleteUserData);
 
 
 
